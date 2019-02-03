@@ -1,0 +1,77 @@
+td
+{
+	border-right: 1px solid black;
+	padding: 0;
+	margin:0;
+	height: 100px;
+}
+table
+{
+  background-color: #ed1061; 
+}
+.oddRow
+{
+	border:1px solid black;
+}
+.room
+{
+	height: 100%; 
+	width: 100px; 
+	
+	color: white; 
+	text-align: center;
+}
+.r1_gap
+{
+	height: 100%;
+	width: 17.5px; 
+	color: white; 
+	text-align: center;
+	background-color: white; 
+}
+.washroom
+{
+	height: 100%; 
+	width: 142px; 
+	background-color: black; 
+	color: white; 
+	text-align: center; 
+}
+.coridor
+{
+	height: 100%; 
+	width: 80px;
+	display: table;
+	background-color: gray;
+}
+.hCoridor
+{
+	background-color: gray;
+	font-size: 80px;
+}
+.nothing
+{
+	height:100%; 
+	width: 97px;
+	background-color: white;
+}
+.tableTennis
+{
+	height: 350px; 
+	width: 100px; 
+	background-color: green; 
+	color: white; 
+	text-align: center;
+}
+.white
+{
+	background-color: white;
+}
+.elevator
+{
+	height: 85px; 
+	width: 100px; 
+	background-color: #96b5e8; 
+	color: white; 
+	text-align: center;
+}

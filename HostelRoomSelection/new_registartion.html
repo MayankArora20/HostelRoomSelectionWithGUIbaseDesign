@@ -1,0 +1,110 @@
+
+<html>
+<head>
+	<title>Student Registration Form</title>
+	
+</head>
+<body style="background-color: #ed1061;">
+	<h1 style="text-align: center;"> Student Registration</h1>
+<form action="new_registartion.php" method="POST" name="StudentRegistration" onsubmit="return(validate());">
+
+	<table cellpadding="10" width="50%" bgcolor="lightblue" align="center" cellspacing="10" style="opacity: .9; ">
+	
+
+		<tr>
+			<td>Name<sup style="color:#F00">*</sup></td>
+			<td><input type="text" name="sname" id="sname" size="30" onkeyup="ncheck()"></td>
+			<td><div id="errsn"></td>
+		</tr>
+
+		<tr>
+			<td>Registration Number<sup style="color:#F00">*</sup></td>
+			<td><input type="text" name="reg" id="reg" size="30" onkeyup="rcheck()"></td>
+			<td><div id="errrg"></td>
+		</tr>
+
+
+		<tr>
+			<td>Exam-Cleared<sup style="color:#F00">*</sup></td>
+			<td><input type="text" name="exam" id="exam" placeholder="NIMCET/JOSAA" size="30" onkeyup="excheck()"></td>
+		</tr>
+
+		<tr>
+			<td>Course<sup style="color:#F00">*</sup></td>
+			<td><select name="course" id="course">
+			<option value="-1" selected>select..</option>
+			<option value="B.Tech">B.TECH</option>
+			<option value="MCA">MCA</option>
+			</select></td>
+		</tr>
+
+		<tr>
+			<td>Branch<sup style="color:#F00">*</sup></td>
+			<td><input type="text" name="branch" id="branch" size="30"></td>
+		</tr>
+
+         <tr>
+			<td>DOB<sup style="color:#F00">*</sup></td>
+			<td><input type="text" name="dob" id="dob" placeholder="yyyy-mm-dd" size="30" onkeyup="dcheck()"></td>
+		</tr>
+
+		<tr>
+			<td>Mobile No<sup style="color:#F00">*</sup></td>
+			<td><input type="text" name="mob" id="mob" size="30" onkeyup="mcheck()"></td>
+		</tr>
+
+
+		<tr>
+			<td>Address</td>
+			<td><input type="text" name="address" id="address" size="30" onkeyup="addcheeck()"></td>
+		</tr>/
+
+		<tr>
+		<td>City</td>
+			<td><input type="text" name="city" id="city" size="30" onkeyup="ctcheck()"></td>
+		</tr>
+
+
+		<tr>
+		<td>Stat/Province</td>
+			<td><input type="text" name="state" id="state" size="30" onkeyup="stcheck()"></td>
+		</tr>
+
+
+		<tr>
+		<td>Country</td>
+			<td><input type="text" name="country" id="country" size="30" onkeyup="ccheck()"></td>
+		</tr>
+		<tr>
+			<td>Email Id<sup style="color:#F00">*</sup></td>
+			<td><input type="text" name="email" id="email" size="30" onkeyup="echeck()"></td>
+		</tr>
+
+		<tr>
+			<td>Father Name<sup style="color:#F00">*</sup></td>
+			<td><input type="text" name="fname" id="fname"
+			size="30" onkeyup="fcheck()"></td>
+		</tr>
+
+
+		<tr>
+			<td>Father's Mobile Number<sup style="color:#F00">*</sup></td>
+			<td><input type="text" name="fmob" id="fmob" size="30" onkeyup="fmcheck()"></td>
+		</tr>
+	
+		
+
+
+			<td align="right">
+				<input type="reset">
+			</td>
+			<td colspan="2">
+				<input type="submit" value="Submit Form" />
+			</td>
+		</tr>
+		
+	</table>
+	
+</form>
+</body>
+</html>

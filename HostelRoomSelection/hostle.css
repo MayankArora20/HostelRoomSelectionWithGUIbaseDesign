@@ -1,0 +1,32 @@
+body{
+  background-color: #ed1061;
+  font-size:50;
+  text-align :center;
+ font-style: oblique;
+}
+ th, td {
+     font-style: oblique;
+      font-size:40;
+      
+}
+
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #42f492;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color:black;}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
