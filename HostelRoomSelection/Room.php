@@ -46,7 +46,7 @@ $con=mysqli_connect("localhost","root","");
   <table class="oddRow">
     <tr>
       <td >
-        <a style="display:block; height:100%;" id="a121"href="Select.php?id=112"><div class="room" id="112" > Room 112</div></a>
+        <a style="display:block; height:100%;" id="a121" href="Select.php?id=112"><div class="room" id="112" > Room 112</div></a>
       </td>
       <td >
         <a style="display:block; height:100%;" id="a111" href="Select.php?id=111"><div class="room" id="111" > Room 111</div></a>

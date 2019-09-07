@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `hostel` (
-  `Name` varchar(40) NOT NULL,
+  `Name` varchar(40) NOT NULL primary key,
   `Total_Room` int(11) NOT NULL,
   `Total_Floor` int(11) NOT NULL,
   `Floor_Room` int(11) NOT NULL,
@@ -51,41 +51,20 @@ INSERT INTO `hostel` (`Name`, `Total_Room`, `Total_Floor`, `Floor_Room`, `Mess`,
 -- Table structure for table `login`
 --
 
-CREATE TABLE `login` (
-  `id` varchar(20) DEFAULT NULL,
-  `password` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `admin` (
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
+  `hostel` varchar(40) NOT NULL,
+  FOREIGN KEY (`hostel`) References hostel(`Name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf32;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`id`, `password`) VALUES
-('bittu', '123'),
-('mayank', '111');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `room`
---
-
-CREATE TABLE `room` (
-  `regno` varchar(20) NOT NULL,
-  `roomno` int(11) NOT NULL,
-  `name` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `room`
---
-
-INSERT INTO `room` (`regno`, `roomno`, `name`) VALUES
-('2017ca52', 111, 'Bittu kumar'),
-('2017ca51', 107, 'sriram'),
-('2017CA25', 112, 'mubashhsir ahmad'),
-('2017CA21', 107, 'lokesh'),
-('2017CA21', 107, 'lokesh');
+INSERT INTO `admin` VALUES
+('bittu', '123','Swami Vivekanand Boys Hostel'),
+('mayank', '111','Swami Vivekanand Boys Hostel');
 
 -- --------------------------------------------------------
 
@@ -94,7 +73,7 @@ INSERT INTO `room` (`regno`, `roomno`, `name`) VALUES
 --
 
 CREATE TABLE `student` (
-  `registration_num` varchar(8) NOT NULL,
+  `registration_num` varchar(8) NOT NULL primary key,
   `student_name` varchar(30) NOT NULL,
   `exam` varchar(6) NOT NULL,
   `course` varchar(3) NOT NULL,
@@ -107,19 +86,31 @@ CREATE TABLE `student` (
   `Country` varchar(20) NOT NULL,
   `Email` varchar(30) NOT NULL,
   `Fathers Name` varchar(30) NOT NULL,
-  `Fathers Mob` bigint(10) NOT NULL,
-  `Room` int(11) NOT NULL
+  `Fathers Mob` bigint(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
 
+
+
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `student`
+-- Table structure for table `room`
 --
 
-INSERT INTO `student` (`registration_num`, `student_name`, `exam`, `course`, `branch`, `DOB`, `Mobile`, `Address`, `City`, `State`, `Country`, `Email`, `Fathers Name`, `Fathers Mob`, `Room`) VALUES
-('2017CA21', 'lokesh', 'NIMCET', 'MCA', '', '1992-02-02', 9410236114, 'jila khagarya bihar', 'muzaffarpur', 'bihar', 'INDIA', 'lokeshchutya@gmail.com', 'mujhe nhi pata', 9898649641, 107),
-('2017CA25', 'mubashhsir ahmad', 'NIMCET', 'MCA', '', '1992-02-02', 9410236114, 'jila khagarya bihar', 'muzaffarpur', 'bihar', 'INDIA', 'lokeshchutya@gmail.com', 'mujhe nhi pata', 9898649641, 112),
-('2017ca51', 'sriram', 'NIMET', 'MCA', 'ddd', '2000-10-10', 7317778274, 'tilak hostel,mnnit(room no-222), mnnit allahabad', 'ALLAHABAD', 'mnnit', 'India', 'bittukumarmnnit@gmail.com', 'RAMAN', 7317778274, 107),
-('2017ca52', 'Bittu kumar', 'NIMET', 'MCA', 'ddd', '2000-10-10', 7317778274, 'tilak hostel,mnnit(room no-222), mnnit allahabad', 'ALLAHABAD', 'mnnit', 'India', 'bittukumarmnnit@gmail.com', 'Vipin Choudhary', 7317778274, 111);
+CREATE TABLE `room` (roomNo int primary key, availability int,
+           reg1 varchar(8), reg2 varchar(8),reg3 varchar(8),
+   `hostel` varchar(40) NOT NULL,
+  foreign key (hostel) REFERENCES hostel(Name),
+  foreign key (reg1) REFERENCES student(registration_num),
+  foreign key (reg2) REFERENCES student(registration_num),
+  foreign key (reg3) REFERENCES student(registration_num)
+  )
+ ENGINE=InnoDB DEFAULT CHARSET=utf32;
+
+--
+-- Dumping data for table `room`
+--
+
 
 --
 -- Indexes for dumped tables
@@ -128,9 +119,6 @@ INSERT INTO `student` (`registration_num`, `student_name`, `exam`, `course`, `br
 --
 -- Indexes for table `student`
 --
-ALTER TABLE `student`
-  ADD PRIMARY KEY (`registration_num`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
