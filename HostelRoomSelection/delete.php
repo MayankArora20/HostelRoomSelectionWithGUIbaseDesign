@@ -73,7 +73,6 @@ $x;
     <th>Email</th>
     <th>Fathers Name</th>
     <th>Fathers Mobile</th>
-    <th>Room Number</th>
     <th>Delete</th>
       </tr>
 
@@ -94,7 +93,6 @@ $x;
   <td><?php echo $row['Email'];?></td>
   <td><?php echo $row['Fathers Name'];?></td>
   <td><?php echo $row['Fathers Mob'];?></td>
-  <td><?php echo $row['Room'];?></td>
   <?php $x=$row['registration_num'];?>
   <td><a href="del.php?delid=<?php echo $x;?>"><input type ="button" onclick="deleteme()" name ="Delete" value="Delete"></a></td>
 </tr>

@@ -24,7 +24,7 @@ session_start();
 
  	mysqli_select_db($con,"mini_proj");
 
- 	$query="insert into student values ( '".$reg."','".$name."','".$exam."','".$course."','".$branch."','".$dob."','".$mob."','".$add."','".$city."','".$state."','".$country."','".$email."','".$fnam."','".$fmob."',0)";
+ 	$query="insert into student values ( '".$reg."','".$name."','".$exam."','".$course."','".$branch."','".$dob."','".$mob."','".$add."','".$city."','".$state."','".$country."','".$email."','".$fnam."','".$fmob."')";
 
  	if (mysqli_query($con, $query)) 
  	{

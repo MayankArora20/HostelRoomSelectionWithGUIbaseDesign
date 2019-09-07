@@ -66,7 +66,6 @@ function filterTable($query)
 		<th>Email</th>
 		<th>Fathers Name</th>
 		<th>Fathers Mobile</th>
-		<th>Room Number</th>
 	</tr>
 
 <?php while($row = mysqli_fetch_array($search_result)):?>
@@ -86,7 +85,6 @@ function filterTable($query)
 	<td><?php echo $row['Email'];?></td>
 	<td><?php echo $row['Fathers Name'];?></td>
 	<td><?php echo $row['Fathers Mob'];?></td>
-	<td><?php echo $row['Room'];?></td>
 	</tr>
 
 
